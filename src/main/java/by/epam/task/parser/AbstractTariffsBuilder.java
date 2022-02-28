@@ -1,6 +1,6 @@
-package by.epam.zahar.parser;
+package by.epam.task.parser;
 
-import by.epam.zahar.exception.TariffException;
+import by.epam.task.exception.TariffException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

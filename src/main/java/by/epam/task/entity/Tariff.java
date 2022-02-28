@@ -1,4 +1,4 @@
-package by.epam.zahar.entity;
+package by.epam.task.entity;
 
 import java.time.LocalDate;
 
@@ -88,6 +88,36 @@ public class Tariff {
 
     public void setParameters(Parameters parameters) {
         this.parameters = parameters;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Tariff tariff = (Tariff) o;
+
+        if (Float.compare(tariff.payroll, payroll) != 0) return false;
+        if (Float.compare(tariff.smsPrice, smsPrice) != 0) return false;
+        if (name != null ? !name.equals(tariff.name) : tariff.name != null) return false;
+        if (vendorCode != null ? !vendorCode.equals(tariff.vendorCode) : tariff.vendorCode != null) return false;
+        if (localDate != null ? !localDate.equals(tariff.localDate) : tariff.localDate != null) return false;
+        if (operatorName != tariff.operatorName) return false;
+        if (callPrices != null ? !callPrices.equals(tariff.callPrices) : tariff.callPrices != null) return false;
+        return parameters != null ? parameters.equals(tariff.parameters) : tariff.parameters == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (vendorCode != null ? vendorCode.hashCode() : 0);
+        result = 31 * result + (localDate != null ? localDate.hashCode() : 0);
+        result = 31 * result + (payroll != +0.0f ? Float.floatToIntBits(payroll) : 0);
+        result = 31 * result + (smsPrice != +0.0f ? Float.floatToIntBits(smsPrice) : 0);
+        result = 31 * result + (operatorName != null ? operatorName.hashCode() : 0);
+        result = 31 * result + (callPrices != null ? callPrices.hashCode() : 0);
+        result = 31 * result + (parameters != null ? parameters.hashCode() : 0);
+        return result;
     }
 
     @Override

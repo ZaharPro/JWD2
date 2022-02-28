@@ -1,4 +1,4 @@
-package by.epam.zahar.entity;
+package by.epam.task.entity;
 
 public enum Tariffication {
     TWELVE_SECOND, MINUTE

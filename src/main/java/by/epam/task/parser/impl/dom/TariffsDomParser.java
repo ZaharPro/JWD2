@@ -1,9 +1,9 @@
-package by.epam.zahar.parser.impl.dom;
+package by.epam.task.parser.impl.dom;
 
-import by.epam.zahar.entity.*;
-import by.epam.zahar.exception.TariffException;
-import by.epam.zahar.parser.AbstractTariffsBuilder;
-import by.epam.zahar.validation.CustomFileValidator;
+import by.epam.task.entity.*;
+import by.epam.task.exception.TariffException;
+import by.epam.task.parser.AbstractTariffsBuilder;
+import by.epam.task.validation.CustomFileValidator;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -47,7 +47,7 @@ public class TariffsDomParser extends AbstractTariffsBuilder {
             }
 
         } catch (IllegalArgumentException e) {
-            logger.error("Illegal argument " + e);
+          logger.error("Illegal argument " + e);
             throw new TariffException("Illegal argument " + e);
         } catch (IOException | SAXException e) {
             logger.error("Build tariffs: " + e);
@@ -67,9 +67,9 @@ public class TariffsDomParser extends AbstractTariffsBuilder {
         tariff.setLocalDate(localDate);
 
         tariff.setName(getElementTextContent(tariffElement, "name"));
-        Float payroll = Float.parseFloat(getElementTextContent(tariffElement, "payroll"));
+        float payroll = Float.parseFloat(getElementTextContent(tariffElement, "payroll"));
         tariff.setPayroll(payroll);
-        Float smsPrice = Float.parseFloat(getElementTextContent(tariffElement, "smsPrice"));
+        float smsPrice = Float.parseFloat(getElementTextContent(tariffElement, "smsPrice"));
         tariff.setSmsPrice(smsPrice);
         OperatorName operatorName = OperatorName.valueOf(getElementTextContent(tariffElement, "operatorName"));
         tariff.setOperatorName(operatorName);

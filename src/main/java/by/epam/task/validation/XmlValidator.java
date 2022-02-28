@@ -1,6 +1,6 @@
-package by.epam.zahar.validation;
+package by.epam.task.validation;
 
-import by.epam.zahar.exception.TariffErrorHandler;
+import by.epam.task.exception.TariffErrorHandler;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 import org.xml.sax.SAXException;
@@ -32,7 +32,10 @@ public class XmlValidator {
             Source source = new StreamSource(pathToXmlFile);
             validator.setErrorHandler(new TariffErrorHandler());
             validator.validate(source);
-        } catch (SAXException | IOException e) {
+        } catch (SAXException e) {
+            answer = false;
+            logger.error("XML file invalid " + e);
+        } catch (IOException e) {
             answer = false;
             logger.error("XML file invalid " + e);
         }

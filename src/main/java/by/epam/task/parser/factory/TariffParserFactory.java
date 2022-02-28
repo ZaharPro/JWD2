@@ -1,8 +1,10 @@
-package by.epam.zahar.parser.factory;
+package by.epam.task.parser.factory;
 
-import by.epam.zahar.parser.AbstractTariffsBuilder;
-import by.epam.zahar.parser.impl.dom.TariffsDomParser;
-import by.epam.zahar.exception.TariffException;
+import by.epam.task.parser.AbstractTariffsBuilder;
+import by.epam.task.parser.impl.dom.TariffsDomParser;
+import by.epam.task.parser.impl.sax.TariffsSaxParser;
+import by.epam.task.parser.impl.stax.TariffsStaxParser;
+import by.epam.task.exception.TariffException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -32,6 +34,12 @@ public class TariffParserFactory {
         switch (type) {
             case DOM -> {
                 return new TariffsDomParser();
+            }
+            case STAX -> {
+                return new TariffsStaxParser();
+            }
+            case SAX -> {
+                return new TariffsSaxParser();
             }
             default -> throw new EnumConstantNotPresentException(
                     type.getDeclaringClass(), type.name());

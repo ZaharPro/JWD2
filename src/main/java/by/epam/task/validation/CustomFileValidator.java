@@ -1,4 +1,4 @@
-package by.epam.zahar.validation;
+package by.epam.task.validation;
 
 import java.io.File;
 
@@ -8,6 +8,9 @@ public class CustomFileValidator {
             return false;
         }
         File file = new File(pathFile);
-        return file.exists() && file.isFile() && file.length() > 0 && file.canRead();
+        if (file.exists() && file.isFile() && file.length() > 0 && file.canRead()) {
+            return true;
+        }
+        return false;
     }
 }

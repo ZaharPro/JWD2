@@ -10,11 +10,11 @@
             </run>
         </groups>
         <classes>
-            <class name = "by.epam.zahar.validator.CustomFileValidatorTest"/>
-            <class name = "by.epam.zahar.validator.XMLValidatorTest"/>
-            <class name = "by.epam.zahar.parser.TariffsDomParserTest"/>
-            <class name="by.epam.zahar.parser.TariffsSaxParserTest"/>
-            <class name="by.epam.zahar.parser.TariffsStaxParserTest"/>
+            <class name = "by.epam.task.validator.CustomFileValidatorTest"/>
+            <class name = "by.epam.task.validator.XMLValidatorTest"/>
+            <class name = "by.epam.task.parser.TariffsDomParserTest"/>
+            <class name="by.epam.task.parser.TariffsSaxParserTest"/>
+            <class name="by.epam.task.parser.TariffsStaxParserTest"/>
         </classes>
     </test>
 

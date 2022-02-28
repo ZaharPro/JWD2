@@ -1,4 +1,4 @@
-package by.epam.zahar.exception;
+package by.epam.task.exception;
 
 public class TariffException extends Exception{
     public TariffException() {

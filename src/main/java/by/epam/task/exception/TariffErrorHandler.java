@@ -1,4 +1,4 @@
-package by.epam.zahar.exception;
+package by.epam.task.exception;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
