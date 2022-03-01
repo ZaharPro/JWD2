@@ -1,5 +1,6 @@
 package by.epam.task.parser.impl.sax;
 
+import by.epam.task.entity.Tariff;
 import by.epam.task.parser.AbstractTariffsBuilder;
 import by.epam.task.validation.CustomFileValidator;
 import by.epam.task.exception.TariffErrorHandler;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 
 public class TariffsSaxParser extends AbstractTariffsBuilder {
     private XMLReader reader;
-    private TariffHandler handler = new TariffHandler();
+    private final TariffHandler handler = new TariffHandler();
 
     public TariffsSaxParser() {
         SAXParserFactory factory = SAXParserFactory.newInstance();
@@ -27,10 +28,6 @@ public class TariffsSaxParser extends AbstractTariffsBuilder {
         }
         reader.setErrorHandler(new TariffErrorHandler());
         reader.setContentHandler(handler);
-    }
-
-    public TariffsSaxParser(ArrayList tariffs) {
-        super(tariffs);
     }
 
     public void buildSetTariffs(String filePath) throws TariffException {

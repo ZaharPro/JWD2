@@ -20,7 +20,7 @@ public enum TariffXmlTag {
     PARAMETERS("parameters"),
     CALL_PRICES("callPrices");
 
-    private String value;
+    private final String value;
 
     TariffXmlTag(String value) {
         this.value = value;

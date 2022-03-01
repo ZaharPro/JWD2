@@ -16,18 +16,18 @@ import java.util.EnumSet;
 
 public class TariffHandler extends DefaultHandler {
     private static Logger logger = LogManager.getLogger();
-    private ArrayList tariffs;
+    private final ArrayList<Tariff> tariffs;
     private Tariff current;
     private TariffXmlTag currentXmlTag;
     private EnumSet<TariffXmlTag> withText;
     private static final String ELEMENT_TARIFF = "tariff";
 
     public TariffHandler() {
-        tariffs = new ArrayList();
+        tariffs = new ArrayList<>();
         withText = EnumSet.range(TariffXmlTag.NAME, TariffXmlTag.TARIFFICATION);
     }
 
-    public ArrayList getTariffs() {
+    public ArrayList<Tariff> getTariffs() {
         return tariffs;
     }
 
@@ -66,7 +66,7 @@ public class TariffHandler extends DefaultHandler {
                 case OPERATOR_NAME -> current.setOperatorName(OperatorName.valueOf(data));
                 case PRICE_WITHIN_THE_NETWORK -> current.getCallPrices().setPriceWithinTheNetwork(Float.parseFloat(data));
                 case PRICE_OUTSIDE_NETWORK -> current.getCallPrices().setPriceOutsideNetwork(Float.parseFloat(data));
-                case PRICE_LAND_LINE_PHONES -> current.getCallPrices().setPricelandlinePhones(Float.parseFloat(data));
+                case PRICE_LAND_LINE_PHONES -> current.getCallPrices().setPriceLandlinePhones(Float.parseFloat(data));
                 case FEE_CONNECTION -> current.getParameters().setFeeConnection(Float.parseFloat(data));
                 case FAVOURITY_NUMBER -> current.getParameters().setFavoriteNumber(Integer.parseInt(data));
                 case TARIFFICATION -> current.getParameters().setTariffication(Tariffication.valueOf(data));

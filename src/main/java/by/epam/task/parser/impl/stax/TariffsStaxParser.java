@@ -15,18 +15,12 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class TariffsStaxParser extends AbstractTariffsBuilder {
-    private XMLInputFactory inputFactory;
+    private final XMLInputFactory inputFactory = XMLInputFactory.newFactory();
 
     public TariffsStaxParser() {
-        inputFactory = XMLInputFactory.newFactory();
-        tariffs = new ArrayList();
-    }
-
-    public TariffsStaxParser(ArrayList tariffs) {
-        super(tariffs);
+        super();
     }
 
     @Override
@@ -102,7 +96,7 @@ public class TariffsStaxParser extends AbstractTariffsBuilder {
                     switch (TariffXmlTag.getTag(name)) {
                         case PRICE_WITHIN_THE_NETWORK -> callPrices.setPriceWithinTheNetwork(Float.parseFloat(getXMLText(reader)));
                         case PRICE_OUTSIDE_NETWORK -> callPrices.setPriceOutsideNetwork(Float.parseFloat(getXMLText(reader)));
-                        case PRICE_LAND_LINE_PHONES -> callPrices.setPricelandlinePhones(Float.parseFloat(getXMLText(reader)));
+                        case PRICE_LAND_LINE_PHONES -> callPrices.setPriceLandlinePhones(Float.parseFloat(getXMLText(reader)));
                     }
                     break;
                 case XMLStreamConstants.END_ELEMENT:

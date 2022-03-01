@@ -3,7 +3,7 @@ package by.epam.task.entity;
 public class CallPrices {
     private float priceWithinTheNetwork;
     private float priceOutsideNetwork;
-    private float pricelandlinePhones;
+    private float priceLandlinePhones;
 
     public CallPrices() {
     }
@@ -11,7 +11,7 @@ public class CallPrices {
     public CallPrices(float priceWithinTheNetwork, float priceOutsideNetwork, float pricelandlinePhones) {
         this.priceWithinTheNetwork = priceWithinTheNetwork;
         this.priceOutsideNetwork = priceOutsideNetwork;
-        this.pricelandlinePhones = pricelandlinePhones;
+        this.priceLandlinePhones = pricelandlinePhones;
     }
 
     public float getPriceWithinTheNetwork() {
@@ -30,12 +30,12 @@ public class CallPrices {
         this.priceOutsideNetwork = priceOutsideNetwork;
     }
 
-    public float getPricelandlinePhones() {
-        return pricelandlinePhones;
+    public float getPriceLandlinePhones() {
+        return priceLandlinePhones;
     }
 
-    public void setPricelandlinePhones(float pricelandlinePhones) {
-        this.pricelandlinePhones = pricelandlinePhones;
+    public void setPriceLandlinePhones(float priceLandlinePhones) {
+        this.priceLandlinePhones = priceLandlinePhones;
     }
 
     @Override
@@ -47,14 +47,14 @@ public class CallPrices {
 
         if (Float.compare(that.priceWithinTheNetwork, priceWithinTheNetwork) != 0) return false;
         if (Float.compare(that.priceOutsideNetwork, priceOutsideNetwork) != 0) return false;
-        return Float.compare(that.pricelandlinePhones, pricelandlinePhones) == 0;
+        return Float.compare(that.priceLandlinePhones, priceLandlinePhones) == 0;
     }
 
     @Override
     public int hashCode() {
         int result = (priceWithinTheNetwork != +0.0f ? Float.floatToIntBits(priceWithinTheNetwork) : 0);
         result = 31 * result + (priceOutsideNetwork != +0.0f ? Float.floatToIntBits(priceOutsideNetwork) : 0);
-        result = 31 * result + (pricelandlinePhones != +0.0f ? Float.floatToIntBits(pricelandlinePhones) : 0);
+        result = 31 * result + (priceLandlinePhones != +0.0f ? Float.floatToIntBits(priceLandlinePhones) : 0);
         return result;
     }
 
@@ -63,7 +63,7 @@ public class CallPrices {
         final StringBuffer sb = new StringBuffer("\n");
         sb.append("\tpriceWithinTheNetwork=").append(priceWithinTheNetwork);
         sb.append(", \n\tpriceOutsideNetwork=").append(priceOutsideNetwork);
-        sb.append(", \n\tpricelandlinePhones=").append(pricelandlinePhones);
+        sb.append(", \n\tpricelandlinePhones=").append(priceLandlinePhones);
         return sb.toString();
     }
 }

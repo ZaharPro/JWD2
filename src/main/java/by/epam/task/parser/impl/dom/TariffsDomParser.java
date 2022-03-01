@@ -15,13 +15,12 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class TariffsDomParser extends AbstractTariffsBuilder {
     private DocumentBuilder docBuilder;
 
     public TariffsDomParser() {
-        tariffs = new ArrayList();
+        super();
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             docBuilder = factory.newDocumentBuilder();
@@ -78,7 +77,7 @@ public class TariffsDomParser extends AbstractTariffsBuilder {
         Element callPricesElement = (Element) tariffElement.getElementsByTagName("callPrices").item(0);
         callPrices.setPriceWithinTheNetwork(Float.parseFloat(getElementTextContent(callPricesElement, "priceWithinTheNetwork")));
         callPrices.setPriceOutsideNetwork(Float.parseFloat(getElementTextContent(callPricesElement, "priceOutsideNetwork")));
-        callPrices.setPricelandlinePhones(Float.parseFloat(getElementTextContent(callPricesElement, "pricelandlinePhones")));
+        callPrices.setPriceLandlinePhones(Float.parseFloat(getElementTextContent(callPricesElement, "pricelandlinePhones")));
 
         Parameters parameters = tariff.getParameters();
         Element parametersElement = (Element) tariffElement.getElementsByTagName("parameters").item(0);

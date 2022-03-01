@@ -9,7 +9,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class TariffParserFactory {
-    private static Logger logger = LogManager.getLogger();
+    private static final Logger logger = LogManager.getLogger();
     private static final String MESSAGE_ERROR_TYPE_PARSER = "Type parser is invalid";
 
     private enum TypeParser {

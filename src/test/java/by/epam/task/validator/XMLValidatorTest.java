@@ -11,22 +11,19 @@ public class XMLValidatorTest {
 
     @Test (groups = "Validator")
     public void testIsValidXmlFileShouldReturnTrueFileIsCorrect() {
-        boolean isValid;
-        isValid = XmlValidator.isValid(CORRECT_XML_FILE_PATH, XSD_FILE_PATH);
+        boolean isValid = XmlValidator.isValid(CORRECT_XML_FILE_PATH, XSD_FILE_PATH);
         Assert.assertTrue(isValid);
     }
 
     @Test (groups = "Validator")
     public void testIsInvalidFilelShouldReturnFalseFileIsIncorrect() {
-        boolean isValid;
-        isValid = XmlValidator.isValid(INCORRECT_XML_FILE_PATH, XSD_FILE_PATH);
+        boolean isValid = XmlValidator.isValid(INCORRECT_XML_FILE_PATH, XSD_FILE_PATH);
         Assert.assertFalse(isValid);
     }
 
     @Test (groups = "Validator")
     public void testIsInvalidPathFileNullShouldReturnFalseFileIsIncorrect() {
-        boolean isValid;
-        isValid = XmlValidator.isValid(null, XSD_FILE_PATH);
+        boolean isValid = XmlValidator.isValid(null, XSD_FILE_PATH);
         Assert.assertFalse(isValid);
     }
 }

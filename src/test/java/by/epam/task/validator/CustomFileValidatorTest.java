@@ -10,22 +10,19 @@ public class CustomFileValidatorTest {
 
     @Test (groups = "Validator")
     public void testIsValidShouldReturnTrueFileIsCorrect() {
-        boolean isValid;
-        isValid = CustomFileValidator.isFileValid(CORRECT_XML_FILE_PATH);
+        boolean isValid = CustomFileValidator.isFileValid(CORRECT_XML_FILE_PATH);
         Assert.assertTrue(isValid);
     }
 
     @Test (groups = "Validator")
     public void testIsInvalidShouldReturnFalseFileIsCorrect() {
-        boolean isValid;
-        isValid = CustomFileValidator.isFileValid(INCORRECT_XML_FILE_PATH);
+        boolean isValid = CustomFileValidator.isFileValid(INCORRECT_XML_FILE_PATH);
         Assert.assertFalse(isValid);
     }
 
     @Test (groups = "Validator")
     public void testIsInvalidFileisNullShouldReturnFalseFileIsCorrect() {
-        boolean isValid;
-        isValid = CustomFileValidator.isFileValid(null);
+        boolean isValid = CustomFileValidator.isFileValid(null);
         Assert.assertFalse(isValid);
     }
 }
